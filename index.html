@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Momin Faruk | Portfolio</title>
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #121212;
+            color: #ffffff;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+        }
+
+        header {
+            padding: 50px 0;
+            background: linear-gradient(45deg, #ff416c, #ff4b2b);
+            animation: fade-in 2s ease-in-out;
+        }
+
+        nav ul {
+            list-style: none;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            background: #222;
+            padding: 15px 0;
+        }
+
+        nav ul li {
+            display: inline;
+        }
+
+        nav ul li a {
+            color: #ffffff;
+            text-decoration: none;
+            font-size: 18px;
+            transition: 0.3s;
+        }
+
+        nav ul li a:hover {
+            color: #ff4b2b;
+        }
+
+        section {
+            padding: 50px;
+            margin: 20px auto;
+            width: 80%;
+            max-width: 800px;
+            background: #1e1e1e;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(255, 75, 43, 0.2);
+            opacity: 0;
+            transform: translateY(20px);
+            animation: slide-in 1.5s ease-out forwards;
+        }
+
+        .project {
+            background: #292929;
+            padding: 15px;
+            border-radius: 5px;
+            margin: 10px 0;
+            box-shadow: 0 4px 8px rgba(255, 75, 43, 0.3);
+            transition: transform 0.3s ease;
+        }
+
+        .project:hover {
+            transform: scale(1.05);
+        }
+
+        footer {
+            padding: 20px;
+            background: #222;
+            margin-top: 20px;
+        }
+
+        @keyframes fade-in {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        @keyframes slide-in {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1 class="fade-in">Momin Faruk</h1>
+        <p class="fade-in">DevOps & Automation Engineer</p>
+    </header>
+    
+    <nav>
+        <ul>
+            <li><a href="#about">About</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#reviews">Reviews</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+    
+    <section id="about" class="slide-in">
+        <h2>About Me</h2>
+        <p>Passionate about cloud computing, automation, and AI, I specialize in DevOps practices, containerization, and infrastructure as code.</p>
+    </section>
+    
+    <section id="projects" class="slide-in">
+        <h2>Projects</h2>
+        <div class="project">
+            <h3>Auto Remediation System</h3>
+            <p>Automated incident resolution using Python, Ansible, and vRO.</p>
+        </div>
+        <div class="project">
+            <h3>Cloud Deployment Automation</h3>
+            <p>Infrastructure provisioning using Terraform, AWS, and Kubernetes.</p>
+        </div>
+        <div class="project">
+            <h3>AI-Powered Polyp Detection</h3>
+            <p>Deep learning-based application for medical image analysis.</p>
+        </div>
+    </section>
+    
+    <section id="skills" class="slide-in">
+        <h2>Skills</h2>
+        <ul>
+            <li>DevOps & Cloud (AWS, Azure, Kubernetes, Terraform)</li>
+            <li>Automation (Python, Ansible, vRO, YML)</li>
+            <li>Full Stack Development (PHP Laravel, SQL, JavaScript)</li>
+        </ul>
+    </section>
+    
+    <section id="reviews" class="slide-in">
+        <h2>Reviews</h2>
+        <p>Leave a review about my work!</p>
+        <form action="mailto:faruk373@gmail.com" method="post" enctype="text/plain">
+            <textarea name="review" rows="4" cols="50" placeholder="Write your review here..."></textarea><br>
+            <input type="submit" value="Submit">
+        </form>
+    </section>
+    
+    <section id="contact" class="slide-in">
+        <h2>Contact</h2>
+        <p>Email: <a href="mailto:faruk373@gmail.com">faruk373@gmail.com</a></p>
+        <p>GitHub: <a href="https://github.com/detection-polypes" target="_blank">github.com/detection-polypes</a></p>
+    </section>
+    
+    <footer>
+        <p>&copy; 2025 Momin Faruk. All Rights Reserved.</p>
+    </footer>
+</body>
+</html>
