@@ -1,9 +1,14 @@
+
+#This configuration sets up an S3 bucket with specific ownership controls, public access settings, ACLs, and uploads objects to the bucket while configuring it to serve as a static website.
+
+
 #create s3 bucket
 resource "aws_s3_bucket" "my_test_bucket" {
   bucket = var.my_terraform_bucket_name
 
 }
 
+#bucket ownership controls
 resource "aws_s3_bucket_ownership_controls" "example" {
   bucket = aws_s3_bucket.my_test_bucket.id
 
@@ -12,7 +17,7 @@ resource "aws_s3_bucket_ownership_controls" "example" {
   }
 }
 
-
+#public access block
 resource "aws_s3_bucket_public_access_block" "example" {
   bucket = aws_s3_bucket.my_test_bucket.id
 
@@ -22,6 +27,7 @@ resource "aws_s3_bucket_public_access_block" "example" {
   restrict_public_buckets = false
 }
 
+#bucket acl
 resource "aws_s3_bucket_acl" "example" {
   depends_on = [
     aws_s3_bucket_ownership_controls.example,
@@ -32,6 +38,7 @@ resource "aws_s3_bucket_acl" "example" {
   acl    = "public-read"
 }
 
+#upload objects
 resource "aws_s3_object" "index" {
   bucket = aws_s3_bucket.my_test_bucket.id
   key    = "index.html"
@@ -40,6 +47,7 @@ resource "aws_s3_object" "index" {
   content_type = "text/html"
 }
 
+#upload objects
 resource "aws_s3_object" "error" {
   bucket = aws_s3_bucket.my_test_bucket.id
   key    = "error.html"
@@ -47,6 +55,7 @@ resource "aws_s3_object" "error" {
   acl    = "public-read"
   content_type = "text/html"
 }
+#upload objects
 resource "aws_s3_object" "profile" {
   bucket = aws_s3_bucket.my_test_bucket.id
   key    = "profile.png"
